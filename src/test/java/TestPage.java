@@ -4,6 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+@Listeners(ListenerPage.class)
 public class TestPage {
 
     WebDriver driver ;
@@ -13,7 +14,7 @@ public class TestPage {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-        Thread.sleep(2000);
+        Thread.sleep(3000);
     }
 
     @Test(priority = 1)
