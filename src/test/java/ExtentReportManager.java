@@ -23,16 +23,11 @@ public class ExtentReportManager implements ITestListener {
         extent = new ExtentReports();
         extent.attachReporter(sparkReporter);
 
-        extent.setSystemInfo("Computer Name","localhost");
         extent.setSystemInfo("Environment","QA");
         extent.setSystemInfo("Tester Name","Karim");
         extent.setSystemInfo("OS Name","Windows10");
         extent.setSystemInfo("Browser Name","Chrome");
 
-    }
-
-    public void onTestStart(ITestResult result) {
-        System.out.println("This is onTestStart...");
     }
 
     public void onTestSuccess(ITestResult result) {
@@ -44,6 +39,7 @@ public class ExtentReportManager implements ITestListener {
         test = extent.createTest(result.getName());
         test.log(Status.FAIL, "Test case FAILED is : "+ result.getName());
         test.log(Status.FAIL, "Test case FAILURE cause is : "+ result.getThrowable());
+        test.log(Status.FAIL, "Test case FAILURE cause is : "+ result.isNotRunning());
     }
 
     public void onTestSkipped(ITestResult result) {

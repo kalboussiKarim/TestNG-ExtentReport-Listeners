@@ -4,7 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-@Listeners(ExtentReportManager.class)
+
 public class TestPage {
 
     WebDriver driver ;
