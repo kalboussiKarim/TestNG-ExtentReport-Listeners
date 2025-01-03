@@ -4,7 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-@Listeners(ListenerPage.class)
+@Listeners(ExtentReportManager.class)
 public class TestPage {
 
     WebDriver driver ;
@@ -25,7 +25,7 @@ public class TestPage {
 
     @Test(priority = 2)
     void testAppURL(){
-        Assert.assertEquals(driver.getCurrentUrl(),"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        Assert.assertEquals(driver.getCurrentUrl(),"httpss://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     }
 
     @Test(priority = 3, dependsOnMethods = {"testAppURL"})
